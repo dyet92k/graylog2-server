@@ -43,7 +43,8 @@ const CollectorsAdministration = createReactClass({
     };
   },
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!lodash.isEqual(this.props.sidecarCollectorPairs, nextProps.sidecarCollectorPairs)) {
       this.setState({
         enabledCollectors: this.getEnabledCollectors(nextProps.sidecarCollectorPairs),
